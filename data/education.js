@@ -4,7 +4,7 @@ class Course {
     this.items = items;
   }
 
-  // 示例方法：获取课程数量
+  // Method to get the course name
   getCourseCount() {
     return this.items.length;
   }

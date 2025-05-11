@@ -1,20 +1,26 @@
-import { skills } from "../../data/skills";
+import skills from "../../data/skills";
 
 export default function Skills() {
   return (
-    <div className="text-center">
-      <h2 className="text-3xl font-bold mb-8">My Skills</h2>
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 justify-center items-center">
-        {skills.map((skill, index) => (
+    <section className="p-8">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+        {skills.map((skillCategory, index) => (
           <div
             key={index}
-            className="flex flex-col items-center justify-center bg-[var(--background)] text-gray-800 dark:text-gray-200 rounded-full shadow-md h-32 w-32"
+            className="p-6 rounded-lg shadow-md"
+            style={{ backgroundColor: "var(--background)" }}
           >
-            <div className="text-4xl mb-3">{skill.icon}</div>
-            <p className="text-base font-medium">{skill.name}</p>
+            <h3 className="text-xl font-semibold mb-4">{skillCategory.category}</h3>
+            <ul className="list-disc list-inside text-gray-700">
+              {skillCategory.items.map((item, idx) => (
+                <li key={idx} className="text-left">
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

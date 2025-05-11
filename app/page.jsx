@@ -1,6 +1,7 @@
 import Image from "next/image";
 import ProjectCard from "./components/ProjectCard";
 import { projects } from "../data/projects";
+import Divider from "./components/Divider";
 
 export default function Home() {
   return (
@@ -20,6 +21,8 @@ export default function Home() {
           applications.
         </p>
       </section>
+
+      <Divider />
 
       {/* projects */}
       <section>

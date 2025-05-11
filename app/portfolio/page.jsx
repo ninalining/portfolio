@@ -2,6 +2,7 @@ import Link from "next/link";
 import ProjectCard from "../components/ProjectCard";
 import { projects } from "../../data/projects";
 import Education from "../components/Education";
+import Divider from "../components/Divider";
 
 export default function Portfolio() {
   return (
@@ -16,8 +17,13 @@ export default function Portfolio() {
         </div>
       </section>
 
+      <Divider />
+
       {/* education */}
-      <Education />
+      <section>
+        <h2 className="text-4xl font-bold mb-6 text-center">My Education</h2>
+        <Education />
+      </section>
     </div>
   );
 }

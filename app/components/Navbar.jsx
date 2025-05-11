@@ -1,11 +1,22 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   return (
     <header className="bg-[var(--header-footer-bg)]">
       <nav className="container mx-auto flex justify-between items-center py-4">
-        <div className="text-2xl font-bold">
-          <Link href="/">My Portfolio</Link>
+        <div className="flex items-center">
+          {/* Add favicon image before "My Portfolio" */}
+          <Image
+            src="/favicon.ico"
+            alt="Favicon"
+            width={24}
+            height={24}
+            className="mr-2"
+          />
+          <div className="text-2xl font-bold">
+            <Link href="/">My portfolio</Link>
+          </div>
         </div>
         <ul className="flex space-x-6 text-gray-700 dark:text-gray-300">
           <li>
