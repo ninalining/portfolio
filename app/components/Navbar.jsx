@@ -1,41 +1,77 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <header className="bg-[var(--header-footer-bg)]">
-      <nav className="container mx-auto flex justify-between items-center py-4">
-        <div className="flex items-center">
-          {/* Add favicon image before "My Portfolio" */}
-          <Image
-            src="/favicon.ico"
-            alt="Favicon"
-            width={24}
-            height={24}
-            className="mr-2"
-          />
-          <div className="text-2xl font-bold">
-            <Link href="/">My portfolio</Link>
+      <nav className="container mx-auto flex flex-wrap items-center justify-between py-4">
+        {/* Logo and toggle button */}
+        <div className="flex items-center justify-between w-full md:w-auto">
+          <div className="flex items-center">
+            <Image
+              src="/favicon.ico"
+              alt="Favicon"
+              width={24}
+              height={24}
+              className="mr-2"
+            />
+            <div className="text-2xl font-bold">
+              <Link
+                href="/"
+                className="hover:underline hover:text-[var(--accent-hover)]"
+              >
+                My portfolio
+              </Link>
+            </div>
           </div>
+          <button
+            className="md:hidden text-gray-700 dark:text-gray-300"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            ☰
+          </button>
         </div>
-        <ul className="flex space-x-6 text-gray-700 dark:text-gray-300">
+
+        {/* Menu items */}
+        <ul
+          className={`${
+            isMenuOpen ? "block" : "hidden"
+          } w-full md:flex md:w-auto md:space-x-6 text-gray-700 dark:text-gray-300 mt-4 md:mt-0`}
+        >
           <li>
-            <Link href="/" className="hover:underline">
+            <Link
+              href="/"
+              className="block font-semibold hover:underline hover:text-[var(--accent-hover)] py-2 md:py-0"
+            >
               Home
             </Link>
           </li>
           <li>
-            <Link href="/about" className="hover:underline">
+            <Link
+              href="/about"
+              className="block font-semibold hover:underline hover:text-[var(--accent-hover)] py-2 md:py-0"
+            >
               About
             </Link>
           </li>
           <li>
-            <Link href="/portfolio" className="hover:underline">
+            <Link
+              href="/portfolio"
+              className="block font-semibold hover:underline hover:text-[var(--accent-hover)] py-2 md:py-0"
+            >
               Portfolio
             </Link>
           </li>
           <li>
-            <Link href="/contact" className="hover:underline">
+            <Link
+              href="/contact"
+              className="block font-semibold hover:underline hover:text-[var(--accent-hover)] py-2 md:py-0"
+            >
               Contact
             </Link>
           </li>
