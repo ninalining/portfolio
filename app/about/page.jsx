@@ -1,36 +1,27 @@
 import Image from "next/image";
+import Divider from "../components/Divider";
 import Skills from "../components/Skills";
 
 export default function About() {
-  const skills = [
-    { name: "JavaScript", icon: "🟨" },
-    { name: "React", icon: "⚛️" },
-    { name: "Next.js", icon: "🌐" },
-    { name: "Tailwind CSS", icon: "🎨" },
-    { name: "Node.js", icon: "🟩" },
-    { name: "Python", icon: "🐍" },
-    { name: "Django", icon: "🌿" },
-    { name: "SQL", icon: "📊" },
-    { name: "REST APIs", icon: "🔗" },
-    { name: "Responsive Design", icon: "📱" },
-  ];
-
   return (
     <div className="container mx-auto py-16 px-6 text-gray-800 dark:text-gray-200">
-      {/* 上半部分：自我介绍 */}
+      {/* self introduction */}
       <section className="flex flex-col lg:flex-row items-center mb-16">
-        {/* 左侧：自我介绍 */}
+        {/* introduction */}
         <div className="lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0">
           <h1 className="text-4xl font-bold mb-4">About Me</h1>
           <p className="text-lg leading-relaxed">
-            Hi, I'm Nina Li, originally from [Your Location]. I used to be a
-            teacher, where I honed my communication and interpersonal skills. Now, I am pursuing my passion for technology by studying web programming at BTH. The journey of learning modern technologies like Next.js and Tailwind CSS has been incredibly exciting and fulfilling. I love the challenge of creating innovative solutions and bringing ideas to life through code.
+            Hi, I'm Nina Li, originally from China. I used to be a
+            teacher, where I honed my communication and interpersonal skills. 
+            Now, I am pursuing my passion for technology by studying web programming at BTH. 
+            The journey of learning modern technologies like Next.js and Tailwind CSS has been incredibly exciting and fulfilling. 
+            I love the challenge of creating innovative solutions and bringing ideas to life through code.
           </p>
         </div>
-        {/* 右侧：照片 */}
+        {/* picture */}
         <div className="lg:w-1/2 flex justify-center">
           <Image
-            src="/profile.jpg" // 替换为你的照片路径
+            src="/profile.jpg"
             alt="Nina Li"
             width={300}
             height={300}
@@ -38,10 +29,12 @@ export default function About() {
           />
         </div>
       </section>
-
-      {/* 下半部分：技能列表 */}
+      <Divider />
+      {/* skills */}
       <section>
-        <Skills skills={skills} />
+        <h2 className="text-3xl font-bold mb-8 text-center">My Skills</h2>
+        {/* Render Skills component */}
+        <Skills />
       </section>
     </div>
   );

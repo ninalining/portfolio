@@ -13,7 +13,6 @@ export default function Education() {
 
 	return (
 		<section className="mt-12">
-			<h2 className="text-2xl font-bold mb-4">Education</h2>
 			<p className="text-gray-700 mb-4">
 				The <strong>Web Programming</strong> program at Blekinge Institute of
 				Technology provides a solid foundation in software development with a

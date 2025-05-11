@@ -50,7 +50,7 @@ export const projects = [
     title: "Symfony Web Application",
     shortDescription: "A Symfony-based web application created for the MVC course.",
     details: "This project is a web application built using Symfony as part of the MVC course. The application demonstrates the use of object-oriented programming, MVC architecture, and database integration. Key features include:\n\n- **Controller and Views**: Implemented the MVC pattern with controllers handling logic and views rendering the web pages.\n- **Object-Oriented Programming**: Practiced creating classes and objects to structure the application.\n- **Symfony Framework**: Leveraged Symfony's tools and features to streamline development.\n\nThis project is still in progress, with the first two course modules completed. The current version includes a basic structure for a personal 'me' page and a report section. The project serves as a foundation for further exploration of Symfony and MVC concepts.",
-    imageSrc: "/images/project-mvcsymfonyproject-mvcsymfony.png",
+    imageSrc: "/images/project-mvcsymfony.png",
     projectLink: "http://www.student.bth.se/~nilb24/dbwebb-kurser/mvc/me/report/public/",
   },
 ];

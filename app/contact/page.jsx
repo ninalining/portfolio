@@ -1,7 +1,7 @@
-import Image from "next/image";
 import ContactForm from "../components/ContactForm";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Divider from "../components/Divider";
 import { socialMedia } from "../../data/socialMedia";
+import SocialMediaLinks from "../components/SocialMediaLinks";
 
 export default function Contact() {
   return (
@@ -9,24 +9,13 @@ export default function Contact() {
       {/* social medier */}
       <section className="text-center mb-16">
         <h1 className="text-4xl font-bold mb-6">Get in Contact with Me</h1>
-        <div className="flex justify-center space-x-6">
-          {socialMedia.map((media) => (
-            <a
-              key={media.name}
-              href={media.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`hover:opacity-80 ${media.color}`}
-            >
-              <FontAwesomeIcon icon={media.icon} className="text-3xl" />
-              <span className="sr-only">{media.name}</span> {/* hidden */}
-            </a>
-          ))}
-        </div>
+        <SocialMediaLinks socialMedia={socialMedia} />
       </section>
 
+      <Divider />
+
       {/* email form */}
-      <section className="max-w-lg mx-auto bg-[var(--background)] p-6 rounded-lg shadow-md">
+      <section className="pt-12 max-w-lg mx-auto bg-[var(--background)] p-6 rounded-lg shadow-md my-8">
         <h2 className="text-2xl font-semibold mb-6 text-center">
           Send Me an Email
         </h2>

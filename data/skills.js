@@ -1,10 +1,14 @@
-export const skills = [
-  { name: "JavaScript", icon: "🟨" },
-  { name: "React", icon: "⚛️" },
-  { name: "Next.js", icon: "🌐" },
-  { name: "Tailwind CSS", icon: "🎨" },
-  { name: "Node.js", icon: "🟩" },
-  { name: "Python", icon: "🐍" },
-  { name: "SQL", icon: "📊" },
-  { name: "REST APIs", icon: "🔗" },
+export default [
+  {
+    category: "Frontend",
+    items: ["HTML", "CSS", "JavaScript", "React", "Next.js"],
+  },
+  {
+    category: "Backend",
+    items: ["Node.js", "Express", "MariaDB", "SQL"],
+  },
+  {
+    category: "Tools",
+    items: ["Git", "Webpack", "Babel", "ESLint"],
+  },
 ];

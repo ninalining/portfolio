@@ -24,9 +24,26 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-white text-gray-800 dark:text-gray-200 antialiased`}
       >
-        <Navbar className="bg-[var(--background)]" />
-        <main className="min-h-[calc(100vh-120px)]">{children}</main>
-        <Footer className="bg-[var(--background)]" />
+        <div className="min-h-screen flex flex-col">
+          {/* Header */}
+          <header className="bg-gray-800 shadow-md">
+            <Navbar className="bg-[var(--background)]" />
+          </header>
+
+          {/* Main Content */}
+          <main className="flex-1 bg-gray-100">
+            <div className="relative">
+              {/* 分界效果 */}
+              <div className="absolute inset-x-0 top-0 h-2 bg-gray-300 shadow-md"></div>
+              <div className="relative z-10">{children}</div>
+            </div>
+          </main>
+
+          {/* Footer */}
+          <footer className="bg-gray-800 text-white shadow-md">
+            <Footer className="bg-[var(--background)]" />
+          </footer>
+        </div>
       </body>
     </html>
   );
