@@ -27,10 +27,10 @@ export default function Home() {
           Some of My Latest Work
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.slice(0, 3).map((project) => ( // 只显示前 3 个项目
+          {projects.slice(0, 3).map((project) => ( // show only 3 projects  
             <ProjectCard
               key={project.id}
-              href={`/portfolio/${project.id}`} // 链接到动态路由
+              href={`/portfolio/${project.id}`} // link to project page
               title={project.title}
               description={project.shortDescription}
               imageSrc={project.imageSrc}

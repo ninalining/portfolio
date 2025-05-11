@@ -1,0 +1,63 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import { courses } from "../../data/education";
+
+export default function Education() {
+	const [expanded, setExpanded] = useState(null);
+
+	const toggleExpand = (index) => {
+		setExpanded(expanded === index ? null : index);
+	};
+
+	return (
+		<section className="mt-12">
+			<h2 className="text-2xl font-bold mb-4">Education</h2>
+			<p className="text-gray-700 mb-4">
+				The <strong>Web Programming</strong> program at Blekinge Institute of
+				Technology provides a solid foundation in software development with a
+				specialization in web environments. Learn more on the{" "}
+				<Link
+					href="https://www.bth.se/utbildning/program-och-kurser/pagwg/?val=PAGWG25h"
+					target="_blank"
+					rel="noopener noreferrer"
+					className="text-blue-500 underline"
+				>
+					official website
+				</Link>
+				.
+			</p>
+			<div className="space-y-4">
+				{courses.map((course, index) => (
+					<div
+						key={index}
+						className="bg-gray-100 rounded-lg shadow-md"
+					>
+						<button
+							onClick={() => toggleExpand(index)}
+							className="w-full text-left px-4 py-2 flex justify-between items-center"
+						>
+							<span className="font-semibold">{course.term}</span>
+							<span className="text-gray-500">
+								{expanded === index ? "▲" : "▼"}
+							</span>
+						</button>
+						{expanded === index && (
+							<ul className="px-4 py-2 space-y-2">
+								{course.items.map((item, idx) => (
+									<li
+										key={idx}
+										className="text-gray-700"
+									>
+										{item}
+									</li>
+								))}
+							</ul>
+						)}
+					</div>
+				))}
+			</div>
+		</section>
+	);
+}

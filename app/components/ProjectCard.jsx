@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ProjectCard({
   href,
@@ -7,19 +8,23 @@ export default function ProjectCard({
   imageSrc,
 }) {
   const CardContent = (
-    <div className="bg-[var(--background)] rounded-lg shadow-md hover:shadow-lg transition-shadow h-[24rem] flex flex-col">
-      <div className="h-48 flex items-center justify-center overflow-hidden rounded-t-lg">
-        <img
+    <div className="bg-[var(--background)] rounded-xl shadow-md hover:shadow-lg transition-transform transform hover:scale-105 flex flex-col group">
+      {/* pictures */}
+      <div className="relative w-full h-64 overflow-hidden rounded-t-xl bg-[var(--background)]">
+        <Image
           src={imageSrc}
           alt={title}
-          className="w-full h-full object-cover"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-contain p-4"
         />
       </div>
-      <div className="p-4 flex-1 flex flex-col justify-between">
-        <h3 className="text-xl font-semibold">{title}</h3>
-        <p className="text-gray-600 dark:text-gray-300 flex-grow">
-          {description}
-        </p>
+      {/* text */}
+      <div className="p-4 text-center">
+        <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:underline">
+          {title}
+        </h3>
+        <p className="text-gray-600 text-sm">{description}</p>
       </div>
     </div>
   );
