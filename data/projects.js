@@ -12,7 +12,7 @@ export const projects = [
     id: "project2",
     href: "/portfolio/project2",
     title: "Typing Practice Program",
-    shortDescription: "A terminal-based typing practice program to improve typing speed and accuracy.",
+    shortDescription: "A terminal-based typing practice program.",
     details: "This project is a Python-based terminal program designed to help users practice typing. It features multiple difficulty levels (easy, medium, hard) and calculates typing accuracy based on words and characters. The program includes a menu system for selecting difficulty, reading text files, and saving results to a score file. Key features include:\n\n- **Word and Character Precision**: Calculates accuracy by comparing user input with the original text, handling cases where input length differs from the original.\n- **Error Tracking**: Tracks and displays the most frequently mistyped characters.\n- **Score Management**: Saves user scores with names and difficulty levels in a sorted file.\n- **Optimized File Handling**: Uses functions to efficiently open, read, and close files, avoiding redundancy.\n\nThis project was a challenging yet rewarding experience, enhancing skills in Python, file handling, and data processing. It emphasized writing clean, reusable code and solving real-world problems like handling varying input lengths and tracking errors.",
     imageSrc: "/images/project-python.png",
     projectLink: null,

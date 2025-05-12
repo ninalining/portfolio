@@ -7,7 +7,7 @@ export default function Skills() {
         {skills.map((skillCategory, index) => (
           <div
             key={index}
-            className="p-6 rounded-lg shadow-md bg-[var(--background)] dark:bg-[var(--accent)]"
+            className="p-6 rounded-lg shadow-md bg-[var(--background-highlight)] dark:bg-[var(--accent)]"
           >
             <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
               {skillCategory.category}

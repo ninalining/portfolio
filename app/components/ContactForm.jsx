@@ -9,20 +9,40 @@ export default function ContactForm() {
     message: "",
   });
 
+  const [status, setStatus] = useState(null);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    setStatus("loading");
+
+    try {
+      // Replace with your form submission logic
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      setStatus("error");
+    }
   };
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-4 bg-[var(--background)] dark:bg-[var(--accent)] p-6 rounded-lg shadow-md"
+      className="space-y-4 bg-[var(--background-highlight)] dark:bg-[var(--accent)] p-6 rounded-lg shadow-md"
     >
       <div>
         <label
@@ -37,7 +57,7 @@ export default function ContactForm() {
           name="name"
           value={formData.name}
           onChange={handleChange}
-          className="w-full border border-gray-300 dark:border-gray-600 rounded-md p-2 bg-[var(--background-light)] dark:bg-[var(--background)] text-gray-800 dark:text-gray-200"
+          className="bg-[var(--background)] mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-800 dark:text-gray-200"
           required
         />
       </div>
@@ -54,7 +74,7 @@ export default function ContactForm() {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          className="w-full border border-gray-300 dark:border-gray-600 rounded-md p-2 bg-[var(--background-light)] dark:bg-[var(--background)] text-gray-800 dark:text-gray-200"
+          className="bg-[var(--background)] mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-800 dark:text-gray-200"
           required
         />
       </div>
@@ -70,17 +90,26 @@ export default function ContactForm() {
           name="message"
           value={formData.message}
           onChange={handleChange}
-          className="w-full border border-gray-300 dark:border-gray-600 rounded-md p-2 bg-[var(--background-light)] dark:bg-[var(--background)] text-gray-800 dark:text-gray-200"
+          className="bg-[var(--background)] mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-800 dark:text-gray-200"
           rows="4"
           required
-        />
+        ></textarea>
       </div>
       <button
         type="submit"
-        className="bg-[var(--accent-hover)] text-white py-2 px-4 rounded-md dark:bg-[var(--accent-hover)] dark:rounded-md"
+        disabled={status === "loading"}
+        className="w-full py-2 px-4 bg-indigo-600 text-white rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-50"
       >
-        Send
+        {status === "loading" ? "Sending..." : "Send Message"}
       </button>
+      {status === "success" && (
+        <p className="text-green-500">Message sent successfully!</p>
+      )}
+      {status === "error" && (
+        <p className="text-red-500">
+          Something went wrong. Please try again.
+        </p>
+      )}
     </form>
   );
 }

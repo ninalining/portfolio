@@ -8,9 +8,9 @@ export default function ProjectCard({
   imageSrc,
 }) {
   const CardContent = (
-    <div className="bg-[var(--background)] dark:bg-[var(--accent)] rounded-xl shadow-md hover:shadow-lg transition-transform transform hover:scale-105 flex flex-col group">
+    <div className="bg-[var(--background-highlight)] dark:bg-[var(--accent)] rounded-xl shadow-md hover:shadow-lg transition-transform transform hover:scale-105 flex flex-col group">
       {/* pictures */}
-      <div className="relative w-full h-64 overflow-hidden rounded-t-xl bg-[var(--background)] dark:bg-[var(--accent)] group-hover:brightness-110 dark:group-hover:brightness-90">
+      <div className="relative w-full h-64 overflow-hidden rounded-t-xl bg-[var(--background-highlight)] dark:bg-[var(--accent)] group-hover:brightness-110 dark:group-hover:brightness-90">
         <Image
           src={imageSrc}
           alt={title}

@@ -20,11 +20,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body
-        className="bg-[var(--background-light)] dark:bg-[var(--background)] text-[var(--text)] dark:text-[var(--text)] antialiased"
+        className="bg-[var(--background)] text-[var(--text)] antialiased font-sans"
       >
-        <div className="min-h-screen flex flex-col bg-[var(--background-light)] dark:bg-[var(--background)]">
+        <div className="min-h-screen flex flex-col">
           {/* Header */}
           <Header />
 
@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
           </main>
 
           {/* Footer */}
-          <footer className="bg-[var(--header-footer-bg)] text-[var(--text)] dark:text-[var(--text)] shadow-md">
+          <footer className="bg-[var(--header-footer-bg)] text-[var(--text)] shadow-md">
             <Footer />
           </footer>
         </div>
