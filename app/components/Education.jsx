@@ -31,7 +31,7 @@ export default function Education() {
 				{courses.map((course, index) => (
 					<div
 						key={index}
-						className="bg-gray-100 dark:bg-[var(--accent)] rounded-lg shadow-md dark:shadow-lg"
+						className="bg-[var(--background-highlight)] dark:bg-[var(--accent)] rounded-lg shadow-md dark:shadow-lg"
 					>
 						<button
 							onClick={() => toggleExpand(index)}
