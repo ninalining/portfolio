@@ -21,14 +21,12 @@
   --instagram-color: #e1306c;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #272f40;
-    --text: #ebeef2;
-    --accent: #3b4a61;
-    --accent-hover: #f25c05;
-    --header-footer-bg: #3b4a61;;
-  }
+.dark {
+  --background: #272f40;
+  --text: #ebeef2;
+  --accent: #3b4a61;
+  --accent-hover: #f25c05;
+  --header-footer-bg: #3b4a61;
 }
 
 body {
