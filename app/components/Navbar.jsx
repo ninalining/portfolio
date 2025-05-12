@@ -8,7 +8,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-[var(--header-footer-bg)]">
+    <header className="bg-[var(--header-footer-bg)] shadow-md shadow-gray-300 dark:shadow-gray-700">
       <nav className="container mx-auto flex flex-wrap items-center justify-between py-4">
         {/* Logo and toggle button */}
         <div className="flex items-center justify-between w-full md:w-auto">
@@ -18,7 +18,14 @@ export default function Navbar() {
               alt="Favicon"
               width={24}
               height={24}
-              className="mr-2"
+              className="mr-2 rounded-full dark:hidden" // Show in light mode only
+            />
+            <Image
+              src="/favicon-white.ico"
+              alt="Favicon Dark"
+              width={24}
+              height={24}
+              className="mr-2 rounded-full hidden dark:inline" // Show in dark mode only
             />
             <div className="text-2xl font-bold">
               <Link

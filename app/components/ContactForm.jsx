@@ -16,14 +16,19 @@ export default function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // 在这里处理表单提交逻辑，例如发送到 API 或邮件服务
     console.log("Form submitted:", formData);
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-4 bg-[var(--background)] dark:bg-[var(--accent)] p-6 rounded-lg shadow-md"
+    >
       <div>
-        <label htmlFor="name" className="block text-sm font-medium">
+        <label
+          htmlFor="name"
+          className="block text-sm font-medium text-gray-800 dark:text-gray-200"
+        >
           Name
         </label>
         <input
@@ -32,12 +37,15 @@ export default function ContactForm() {
           name="name"
           value={formData.name}
           onChange={handleChange}
-          className="w-full border border-gray-300 rounded-md p-2"
+          className="w-full border border-gray-300 dark:border-gray-600 rounded-md p-2 bg-[var(--background-light)] dark:bg-[var(--background)] text-gray-800 dark:text-gray-200"
           required
         />
       </div>
       <div>
-        <label htmlFor="email" className="block text-sm font-medium">
+        <label
+          htmlFor="email"
+          className="block text-sm font-medium text-gray-800 dark:text-gray-200"
+        >
           Email
         </label>
         <input
@@ -46,12 +54,15 @@ export default function ContactForm() {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          className="w-full border border-gray-300 rounded-md p-2"
+          className="w-full border border-gray-300 dark:border-gray-600 rounded-md p-2 bg-[var(--background-light)] dark:bg-[var(--background)] text-gray-800 dark:text-gray-200"
           required
         />
       </div>
       <div>
-        <label htmlFor="message" className="block text-sm font-medium">
+        <label
+          htmlFor="message"
+          className="block text-sm font-medium text-gray-800 dark:text-gray-200"
+        >
           Message
         </label>
         <textarea
@@ -59,14 +70,14 @@ export default function ContactForm() {
           name="message"
           value={formData.message}
           onChange={handleChange}
-          className="w-full border border-gray-300 rounded-md p-2"
+          className="w-full border border-gray-300 dark:border-gray-600 rounded-md p-2 bg-[var(--background-light)] dark:bg-[var(--background)] text-gray-800 dark:text-gray-200"
           rows="4"
           required
         />
       </div>
       <button
         type="submit"
-        className="bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700"
+        className="bg-[var(--accent-hover)] text-white py-2 px-4 rounded-md dark:bg-[var(--accent-hover)] dark:rounded-md"
       >
         Send
       </button>

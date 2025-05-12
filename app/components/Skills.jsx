@@ -7,11 +7,12 @@ export default function Skills() {
         {skills.map((skillCategory, index) => (
           <div
             key={index}
-            className="p-6 rounded-lg shadow-md"
-            style={{ backgroundColor: "var(--background)" }}
+            className="p-6 rounded-lg shadow-md bg-[var(--background)] dark:bg-[var(--accent)]"
           >
-            <h3 className="text-xl font-semibold mb-4">{skillCategory.category}</h3>
-            <ul className="list-disc list-inside text-gray-700">
+            <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
+              {skillCategory.category}
+            </h3>
+            <ul className="list-disc list-inside text-gray-700 dark:text-gray-300">
               {skillCategory.items.map((item, idx) => (
                 <li key={idx} className="text-left">
                   {item}
