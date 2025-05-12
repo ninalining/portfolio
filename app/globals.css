@@ -25,8 +25,9 @@
   :root {
     --background: #272f40;
     --text: #ebeef2;
-    --accent: #f25c05;
-    --accent-hover: #a6430a;
+    --accent: #3b4a61;
+    --accent-hover: #f25c05;
+    --header-footer-bg: #3b4a61;;
   }
 }
 

@@ -13,7 +13,7 @@ export default function Education() {
 
 	return (
 		<section className="mt-12">
-			<p className="text-gray-700 mb-4">
+			<p className="text-gray-700 dark:text-gray-300 mb-4">
 				The <strong>Web Programming</strong> program at Blekinge Institute of
 				Technology provides a solid foundation in software development with a
 				specialization in web environments. Learn more on the{" "}
@@ -21,7 +21,7 @@ export default function Education() {
 					href="https://www.bth.se/utbildning/program-och-kurser/pagwg/?val=PAGWG25h"
 					target="_blank"
 					rel="noopener noreferrer"
-					className="text-blue-500 underline"
+					className="text-[var(--accent)] underline dark:text-[var(--accent-hover)]"
 				>
 					official website
 				</Link>
@@ -31,14 +31,14 @@ export default function Education() {
 				{courses.map((course, index) => (
 					<div
 						key={index}
-						className="bg-gray-100 rounded-lg shadow-md"
+						className="bg-gray-100 dark:bg-[var(--accent)] rounded-lg shadow-md dark:shadow-lg"
 					>
 						<button
 							onClick={() => toggleExpand(index)}
-							className="w-full text-left px-4 py-2 flex justify-between items-center"
+							className="w-full text-left px-4 py-2 flex justify-between items-center text-gray-800 dark:text-gray-200"
 						>
 							<span className="font-semibold">{course.term}</span>
-							<span className="text-gray-500">
+							<span className="text-gray-500 dark:text-gray-400">
 								{expanded === index ? "▲" : "▼"}
 							</span>
 						</button>
@@ -47,7 +47,7 @@ export default function Education() {
 								{course.items.map((item, idx) => (
 									<li
 										key={idx}
-										className="text-gray-700"
+										className="text-gray-700 dark:text-gray-300"
 									>
 										{item}
 									</li>

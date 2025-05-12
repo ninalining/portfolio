@@ -5,7 +5,7 @@ import Divider from "./components/Divider";
 
 export default function Home() {
   return (
-    <div className="container mx-auto py-16 px-6">
+    <div className="container mx-auto py-16 px-6 text-[var(--text)] dark:text-[var(--text)]">
       {/* introduction */}
       <section className="text-center mb-16">
         <Image
@@ -30,10 +30,10 @@ export default function Home() {
           Some of My Latest Work
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.slice(0, 3).map((project) => ( // show only 3 projects  
+          {projects.slice(0, 3).map((project) => (
             <ProjectCard
               key={project.id}
-              href={`/portfolio/${project.id}`} // link to project page
+              href={`/portfolio/${project.id}`}
               title={project.title}
               description={project.shortDescription}
               imageSrc={project.imageSrc}

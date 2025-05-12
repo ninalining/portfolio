@@ -6,8 +6,8 @@ import Divider from "../components/Divider";
 
 export default function Portfolio() {
   return (
-    <div className="container mx-auto py-16 px-6 text-gray-800 dark:text-gray-200">
-      {/* project*/}
+    <div className="container mx-auto py-16 px-6 text-[var(--text)] dark:text-[var(--text)]">
+      {/* project */}
       <section className="mb-16">
         <h1 className="text-4xl font-bold mb-6 text-center">My Recent Projects</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

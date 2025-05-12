@@ -12,8 +12,8 @@ export default async function ProjectPage({ params }) {
   }
 
   return (
-    <div className="container mx-auto py-16 px-6 flex">
-      {/* menu */}
+    <div className="container mx-auto py-16 px-6 flex text-[var(--text)] dark:text-[var(--text)]">
+      {/* Sidebar */}
       <aside className="w-1/4 pr-6 border-r border-gray-300 dark:border-gray-700">
         <h2 className="text-xl font-semibold mb-4">Projects</h2>
         <ul className="space-y-2">
@@ -23,7 +23,7 @@ export default async function ProjectPage({ params }) {
                 href={`/portfolio/${p.id}`}
                 className={`block px-4 py-2 rounded-md ${
                   p.id === projectId
-                    ? "bg-indigo-600 text-white"
+                    ? "bg-[var(--accent)] text-white dark:bg-[var(--accent-hover)]"
                     : "text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
                 }`}
               >
@@ -34,7 +34,7 @@ export default async function ProjectPage({ params }) {
         </ul>
       </aside>
 
-      {/* project content */}
+      {/* Project Content */}
       <main className="w-3/4 pl-6">
         <div className="mb-6">
           <Image
@@ -42,7 +42,7 @@ export default async function ProjectPage({ params }) {
             alt={project.title}
             width={800}
             height={600}
-            className="rounded-lg shadow-md"
+            className="rounded-lg shadow-md brightness-100 dark:brightness-75"
           />
         </div>
         <h1 className="text-3xl font-bold mb-4">{project.title}</h1>
@@ -53,12 +53,11 @@ export default async function ProjectPage({ params }) {
         </div>
         <p className="text-gray-600 dark:text-gray-300">{project.details}</p>
         <div className="flex gap-4">
-          {/* Replace plain anchor tags with Link */}
           {project.links?.map((link, index) => (
             <Link
               key={index}
               href={link.href}
-              className="text-blue-500 hover:underline"
+              className="text-[var(--accent)] hover:underline dark:text-[var(--accent-hover)]"
             >
               {link.label}
             </Link>
@@ -69,7 +68,7 @@ export default async function ProjectPage({ params }) {
             href={project.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-500 hover:underline font-medium"
+            className="text-[var(--accent)] hover:underline font-medium dark:text-[var(--accent-hover)]"
           >
             Visit Project
           </Link>
