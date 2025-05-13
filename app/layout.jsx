@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect } from "react";
+import { metadata } from "./metadata";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import "./globals.css";
@@ -13,14 +17,28 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  title: "Nina Li",
-  description: "A portfolio showcasing Nina's work and skills.",
-};
-
 export default function RootLayout({ children }) {
+  useEffect(() => {
+    const setThemeBasedOnTime = () => {
+      const hour = new Date().getHours();
+      const isDarkMode = hour >= 18 || hour < 6;
+
+      if (isDarkMode) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    };
+
+    setThemeBasedOnTime();
+  }, []);
+
   return (
     <html lang="en">
+      <head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+      </head>
       <body
         className="bg-[var(--background)] text-[var(--text)] antialiased font-sans"
       >

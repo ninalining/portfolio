@@ -21,7 +21,7 @@ export default function Footer() {
     <footer className="bg-[var(--header-footer-bg)] py-6">
       <div className="container mx-auto flex justify-between items-center px-6">
         {/* Left: Copyright information */}
-        <div className="text-sm text-gray-600 dark:text-gray-400">
+        <div className="text-sm text-gray-600 dark:text-[var(--text)]">
           © 2025 Nina's Portfolio. All rights reserved.
         </div>
 
