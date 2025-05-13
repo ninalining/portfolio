@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -21,20 +22,22 @@ export default function ContactForm() {
     setStatus("loading");
 
     try {
-      // Replace with your form submission logic
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+      const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
 
-      if (response.ok) {
-        setStatus("success");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        setStatus("error");
+      if (!serviceId || !templateId || !userId) {
+        throw new Error("Missing EmailJS configuration");
       }
+
+      emailjs.init(userId);
+
+      await emailjs.send(serviceId, templateId, formData);
+
+      setStatus("success");
+      setFormData({ name: "", email: "", message: "" });
     } catch (error) {
+      console.error("EmailJS Error:", error?.text || error?.message || error);
       setStatus("error");
     }
   };
@@ -42,7 +45,7 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-4 bg-[var(--background-highlight)] dark:bg-[var(--accent)] p-6 rounded-lg shadow-md"
+      className="border border-gray-300 space-y-4 bg-[var(--background-highlight)] dark:bg-[var(--accent)] p-6 rounded-lg shadow-md"
     >
       <div>
         <label
@@ -98,15 +101,15 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full py-2 px-4 bg-indigo-600 text-white rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-50"
+        className="w-full py-2 px-4 bg-[var(--accent)] text-[var(--background-light)] rounded-md shadow-sm hover:bg-[var(--accent-hover)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:ring-offset-2 disabled:opacity-50"
       >
         {status === "loading" ? "Sending..." : "Send Message"}
       </button>
       {status === "success" && (
-        <p className="text-green-500">Message sent successfully!</p>
+        <p className="text-[var(--success)]">Message sent successfully!</p>
       )}
       {status === "error" && (
-        <p className="text-red-500">
+        <p className="text-[var(--error)]">
           Something went wrong. Please try again.
         </p>
       )}
