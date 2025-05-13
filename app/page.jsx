@@ -2,6 +2,7 @@ import Image from "next/image";
 import ProjectCard from "./components/ProjectCard";
 import { projects } from "../data/projects";
 import Divider from "./components/Divider";
+import { metadata } from "./metadata";
 
 export default function Home() {
   return (
