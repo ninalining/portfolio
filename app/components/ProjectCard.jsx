@@ -8,9 +8,9 @@ export default function ProjectCard({
   imageSrc,
 }) {
   const CardContent = (
-    <div className="bg-[var(--background-highlight)] dark:bg-[var(--accent)] rounded-xl shadow-md hover:shadow-lg transition-transform transform hover:scale-105 flex flex-col group">
+    <div className="bg-[var(--background-highlight)] dark:bg-[var(--accent)] rounded-2xl shadow-md hover:shadow-lg transition-transform transform hover:scale-105 flex flex-col group h-full">
       {/* pictures */}
-      <div className="relative w-full h-64 overflow-hidden rounded-t-xl bg-[var(--background-highlight)] dark:bg-[var(--accent)] group-hover:brightness-110 dark:group-hover:brightness-90">
+      <div className="relative w-full h-74 overflow-hidden rounded-t-2xl bg-[var(--background-highlight)] dark:bg-[var(--accent)] group-hover:brightness-110 dark:group-hover:brightness-90">
         <Image
           src={imageSrc}
           alt={title}
@@ -20,17 +20,21 @@ export default function ProjectCard({
         />
       </div>
       {/* text */}
-      <div className="p-4 text-center">
+      <div className="p-4 text-center flex-1 flex flex-col justify-between">
         <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-2 group-hover:underline">
           {title}
         </h3>
-        <p className="text-gray-600 dark:text-gray-300 text-sm">{description}</p>
+        <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-2">
+          {description}
+        </p>
       </div>
     </div>
   );
 
   return href ? (
-    <Link href={href}>{CardContent}</Link>
+    <Link href={href} className="h-full">
+      {CardContent}
+    </Link>
   ) : (
     CardContent
   );

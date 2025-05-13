@@ -31,13 +31,14 @@ export default function Home() {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.slice(0, 3).map((project) => (
-            <ProjectCard
-              key={project.id}
-              href={`/portfolio/${project.id}`}
-              title={project.title}
-              description={project.shortDescription}
-              imageSrc={project.imageSrc}
-            />
+            <div key={project.id} className="h-full">
+              <ProjectCard
+                href={`/portfolio/${project.id}`}
+                title={project.title}
+                description={project.shortDescription}
+                imageSrc={project.imageSrc}
+              />
+            </div>
           ))}
         </div>
       </section>
