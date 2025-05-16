@@ -13,7 +13,7 @@ export default function ProjectCard({
       <div className="relative w-full h-74 overflow-hidden rounded-t-2xl bg-[var(--background-highlight)] dark:bg-[var(--accent)] group-hover:brightness-110 dark:group-hover:brightness-90">
         <Image
           src={imageSrc}
-          alt={title}
+          alt={`Image representing the project: ${title}`}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-contain p-4 brightness-100 dark:brightness-75"
@@ -21,10 +21,10 @@ export default function ProjectCard({
       </div>
       {/* text */}
       <div className="p-4 text-center flex-1 flex flex-col justify-between">
-        <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-2 group-hover:underline">
+        <h2 className="text-xl font-bold text-[var(--text-primary)] mb-2 group-hover:underline">
           {title}
-        </h3>
-        <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-2">
+        </h2>
+        <p className="text-[var(--text-secondary)] text-sm line-clamp-2">
           {description}
         </p>
       </div>

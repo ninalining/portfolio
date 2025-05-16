@@ -23,9 +23,9 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #272f40;
-    --text: #ebeef2;
+    --text: #ffffff; /* 提高亮度的白色 */
     --accent: #3b4a61;
-    --accent-hover: #f25c05;
+    --accent-hover: #e56717; /* 更暗的橘黄色 */
     --header-footer-bg: #3b4a61;
   }
 }
