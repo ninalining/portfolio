@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { metadata } from "./metadata";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -18,19 +18,11 @@ const geistMono = Geist_Mono({
 });
 
 export default function RootLayout({ children }) {
+  const [themeClass, setThemeClass] = useState("");
   useEffect(() => {
-    const setThemeBasedOnTime = () => {
-      const hour = new Date().getHours();
-      const isDarkMode = hour >= 18 || hour < 6;
-
-      if (isDarkMode) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-    };
-
-    setThemeBasedOnTime();
+    const hour = new Date().getHours();
+    const isDarkMode = hour >= 18 || hour < 6;
+    setThemeClass(isDarkMode ? "dark" : "");
   }, []);
 
   return (
