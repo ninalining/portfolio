@@ -11,11 +11,7 @@ export default function About() {
         <div className="lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0">
           <h1 className="text-4xl font-bold mb-4">About Me</h1>
           <p className="text-lg leading-relaxed">
-            Hi, I'm Nina Li, originally from China. I used to be a
-            teacher, where I honed my communication and interpersonal skills. 
-            Now, I am pursuing my passion for technology by studying web programming at BTH. 
-            The journey of learning modern technologies like Next.js and Tailwind CSS has been incredibly exciting and fulfilling. 
-            I love the challenge of creating innovative solutions and bringing ideas to life through code.
+            Hi, I'm Nina Li, currently studying Web Programming at BTH. My background as a teacher helped me develop strong communication and collaboration skills, making it natural for me to work effectively with others. I became interested in tech through conversations and experiences with friends and family members who work in the industry, and that inspiration led me to explore this field more deeply. Motivated by curiosity and a desire for new challenges, I transitioned into tech and have gained valuable knowledge in web design, PHP, Python, and databases through this program. I’m excited about continuing to grow as a developer and look forward to new opportunities where I can contribute, learn, and create meaningful digital experiences.
           </p>
         </div>
         {/* picture */}
