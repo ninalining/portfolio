@@ -21,7 +21,7 @@ export default function Education() {
 					href="https://www.bth.se/utbildning/program-och-kurser/pagwg/?val=PAGWG25h"
 					target="_blank"
 					rel="noopener noreferrer"
-					className="text-[var(--accent)] underline hover:text-[var(--accent-hover)] dark:text-[var(--text)]"
+					className="text-[var(--text)] underline hover:text-[var(--accent-hover)] dark:text-[var(--text)]"
 				>
 					official website
 				</Link>

@@ -24,7 +24,7 @@ export default async function ProjectPage({ params }) {
                 className={`block px-4 py-2 rounded-md ${
                   p.id === projectId
                     ? "bg-[var(--accent)] text-[var(--text)] underline dark:bg-[var(--accent)]"
-                    : "bg-[var(--accent)] text-[var(--text)] dark:text-[var(--text)] hover:bg-[var(--accent-hover)] dark:hover:bg-[var(--accent-hover)] hover:underline"
+                    : "bg-[var(--accent)] text-[var(--text)] dark:text-[var(--text)] transform transition-transform duration-200 hover:scale-105 dark:hover:bg-[var(--accent-hover)] hover:underline"
                 }`}
               >
                 {p.title}
@@ -68,7 +68,7 @@ export default async function ProjectPage({ params }) {
             href={project.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[var(--accent)] underline hover:text-[var(--accent-hover)] dark:text-[var(--text)]"
+            className="text-[var(--text)] underline hover:text-[var(--accent-hover)] dark:text-[var(--text)]"
           >
             Visit Project
           </Link>
