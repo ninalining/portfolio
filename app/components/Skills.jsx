@@ -9,10 +9,10 @@ export default function Skills() {
             key={index}
             className="p-6 rounded-lg shadow-md bg-[var(--background-highlight)] dark:bg-[var(--accent)]"
           >
-            <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
+            <h3 className="text-xl font-semibold mb-4 text-[var(--text)] dark:text-[var(--text)]">
               {skillCategory.category}
             </h3>
-            <ul className="list-disc list-inside text-gray-700 dark:text-gray-300">
+            <ul className="list-disc list-inside text-[var(--text)] dark:text-[var(--text)]">
               {skillCategory.items.map((item, idx) => (
                 <li key={idx} className="text-left">
                   {item}

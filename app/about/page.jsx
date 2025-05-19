@@ -17,7 +17,7 @@ export default function About() {
         {/* picture */}
         <div className="lg:w-1/2 flex justify-center">
           <Image
-            src="/profile.jpg"
+            src="/images/IMG_3377.jpg"
             alt="Nina Li"
             width={300}
             height={300}

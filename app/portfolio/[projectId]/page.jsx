@@ -47,7 +47,7 @@ export default async function ProjectPage({ params }) {
         </div>
         <h1 className="text-3xl font-bold mb-4">{project.title}</h1>
         {project.techStack && (
-          <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+          <p className="text-sm text-[var(--text)] dark:text-[var(--text)] mb-4">
             <strong>Tech Stack:</strong> {project.techStack.join(", ")}
           </p>
         )}
