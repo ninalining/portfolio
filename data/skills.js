@@ -1,11 +1,19 @@
 export default [
   {
     category: "Frontend",
-    items: ["HTML", "CSS", "JavaScript", "React", "Next.js"],
+    items: ["HTML", "CSS", "SCSS", "JavaScript", "React", "Next.js"],
   },
   {
     category: "Backend",
-    items: ["Python", "Node.js", "Express", "MariaDB", "SQL"],
+    items: ["Python", "PHP", "Node.js", "MariaDB", "SQL"],
+  },
+  {
+    category: "Frameworks & CMS",
+    items: ["Flask", "Symfony", "Express", "Pico CMS"],
+  },
+  {
+    category: "Templating",
+    items: ["Twig", "Markdown"],
   },
   {
     category: "Tools",
