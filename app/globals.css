@@ -23,15 +23,15 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #272f40;
-    --text: #ffffff; /* 提高亮度的白色 */
+    --text: #ffffff;
     --accent: #3b4a61;
-    --accent-hover: #e56717; /* 更暗的橘黄色 */
+    --accent-hover: #e56717;
     --header-footer-bg: #3b4a61;
   }
 }
 
 body {
-  background: var(--background); /* Ensure background is applied */
+  background: var(--background);
   color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
 }

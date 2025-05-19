@@ -5,7 +5,7 @@ export default [
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express", "MariaDB", "SQL"],
+    items: ["Python", "Node.js", "Express", "MariaDB", "SQL"],
   },
   {
     category: "Tools",

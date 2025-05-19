@@ -3,6 +3,7 @@ import ProjectCard from "./components/ProjectCard";
 import { projects } from "../data/projects";
 import Divider from "./components/Divider";
 import { metadata } from "./metadata";
+import Skills from "./components/Skills";
 
 export default function Home() {
   return (
@@ -27,6 +28,15 @@ export default function Home() {
 
       <Divider />
 
+      <section className="py-12 px-6] rounded-lg my-12">
+        <h2 className="text-3xl font-bold mb-6 text-center text-[var(--text)] dark:text-[var(--text)]">
+          My Skills
+        </h2>
+        <Skills />
+      </section>
+
+      <Divider />
+
       {/* projects */}
       <section>
         <h2 className="text-2xl font-semibold mb-8 text-center">
@@ -40,6 +50,7 @@ export default function Home() {
                 title={project.title}
                 description={project.shortDescription}
                 imageSrc={project.imageSrc}
+                techStack={project.techStack}
               />
             </div>
           ))}

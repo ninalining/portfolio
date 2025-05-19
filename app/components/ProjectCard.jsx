@@ -6,6 +6,7 @@ export default function ProjectCard({
   title,
   description,
   imageSrc,
+  techStack,
 }) {
   const CardContent = (
     <div className="bg-[var(--background-highlight)] dark:bg-[var(--accent)] rounded-2xl shadow-md hover:shadow-lg transition-transform transform hover:scale-105 flex flex-col group h-full">
@@ -24,6 +25,11 @@ export default function ProjectCard({
         <h2 className="text-xl font-bold text-[var(--text-primary)] mb-2 group-hover:underline">
           {title}
         </h2>
+        {techStack && (
+          <p className="text-[var(--text-secondary)] text-xs mb-2">
+            {techStack.join(", ")}
+          </p>
+        )}
         <p className="text-[var(--text-secondary)] text-sm line-clamp-2">
           {description}
         </p>

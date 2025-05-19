@@ -7,6 +7,7 @@ export const projects = [
     details: "This project involves building a website for Begravningsmuseum Online (BMO), showcasing articles, objects, and images related to burial traditions in Sweden. The site dynamically loads content from a SQLite database and features a custom layout inspired by Nordiska Museet. It includes responsive design, grid-based exhibition cards, and hover effects for enhanced user experience.",
     imageSrc: "/images/project-begravning.png",
     projectLink: "http://www.student.bth.se/~nilb24/dbwebb-kurser/webtec/me/proj/public/home.php",
+    techStack: ["PHP", "SQLite", "HTML", "CSS", "JavaScript"],
   },
   {
     id: "project2",
@@ -16,6 +17,7 @@ export const projects = [
     details: "This project is a Python-based terminal program designed to help users practice typing. It features multiple difficulty levels (easy, medium, hard) and calculates typing accuracy based on words and characters. The program includes a menu system for selecting difficulty, reading text files, and saving results to a score file. Key features include:\n\n- **Word and Character Precision**: Calculates accuracy by comparing user input with the original text, handling cases where input length differs from the original.\n- **Error Tracking**: Tracks and displays the most frequently mistyped characters.\n- **Score Management**: Saves user scores with names and difficulty levels in a sorted file.\n- **Optimized File Handling**: Uses functions to efficiently open, read, and close files, avoiding redundancy.\n\nThis project was a challenging yet rewarding experience, enhancing skills in Python, file handling, and data processing. It emphasized writing clean, reusable code and solving real-world problems like handling varying input lengths and tracking errors.",
     imageSrc: "/images/project-python.png",
     projectLink: null,
+    techStack: ["Python"],
   },
   {
     id: "project3",
@@ -25,6 +27,7 @@ export const projects = [
     details: "This project is a web-based intelligence test tool built using JavaScript, HTML, and CSS. It consists of three main tests:\n\n- **TipsTest**: A quiz with multiple-choice questions loaded dynamically from a JSON file. Users receive immediate feedback and score points for correct answers.\n- **FizzBuzzTest**: A logic-based test where users guess the next value in a FizzBuzz sequence. The sequence starts with a random value to ensure variety.\n- **MemoryTest**: A challenging memory game where users recall the positions of images displayed briefly. This test required custom event handling and dynamic DOM manipulation.\n\nKey features include:\n\n- **Dynamic Content Loading**: Questions and images are loaded dynamically from JSON files.\n- **Reusable Code**: Shared functions for handling questions and user interactions were organized into a common module.\n- **Event Handling**: Custom logic for managing user clicks and validating answers.\n\nThis project was a significant learning experience, emphasizing modular code structure, event handling, and dynamic content management. While challenging, it provided valuable insights into JavaScript development and problem-solving.",
     imageSrc: "/images/project-js.png",
     projectLink: "http://www.student.bth.se/~nilb24/dbwebb-kurser/js/me/public/index.html",
+    techStack: ["JavaScript", "HTML", "CSS", "JSON"],
   },
   {
     id: "project4",
@@ -34,6 +37,7 @@ export const projects = [
     details: "This project involved creating a professional portfolio website for Linnéa Leewong, a freelance web developer and designer. The website was built using Pico CMS and includes the following features:\n\n- **Three Pages**: A homepage with a hero image, an 'About Me' page describing the client's profile and services, and a project highlight page showcasing six previous projects.\n- **Custom Theme**: Designed with SASS, the theme uses a complementary color scheme with beige (#d9ceba) and blue-gray (#bac5d9) to reflect professionalism and creativity. Typography includes Poppins for headings and Roboto for body text.\n- **Responsive Design**: Implemented with CSS Grid and Flexbox, ensuring the site works seamlessly on mobile devices without horizontal scrollbars. Images are optimized using `<picture>` and `srcset` for different screen sizes.\n- **Accessibility**: Achieved a perfect Lighthouse accessibility score by adding alt texts for images, ensuring sufficient contrast, and testing with colorblind filters.\n- **Dark Theme Option**: An alternative dark theme with dark backgrounds (#181a1b) and light text (#dcddde) was created, allowing users to switch themes for a modern and elegant experience.\n\nThis project was both challenging and rewarding, involving tasks like managing image rights, resolving 403 errors, and balancing design with functionality. The final result is a visually appealing, responsive, and accessible website that effectively showcases the client's skills and services.",
     imageSrc: "/images/project-picolinnea.png",
     projectLink: "http://www.student.bth.se/~nilb24/dbwebb-kurser/design/me/kmom10/",
+    techStack: ["Pico CMS", "SASS", "HTML", "CSS", "JavaScript"],
   },
   {
     id: "project5",
@@ -43,6 +47,7 @@ export const projects = [
     details: "This project is a personal portfolio website created as a design exercise using Pico CMS. The goal was to practice design principles, responsive layouts, and accessibility while showcasing personal projects and skills. Key features include:\n\n- **Design Principles**: Focused on hierarchy, contrast, and balance to create a visually appealing and user-friendly interface.\n- **Responsive Layout**: Implemented responsive design to ensure the site looks great on both desktop and mobile devices.\n- **Custom Theme**: Designed a custom theme with a clean and modern aesthetic, using a consistent color palette and typography.\n- **Accessibility**: Ensured the site meets accessibility standards, including proper contrast ratios and semantic HTML.\n- **Dynamic Content**: Leveraged Pico CMS to manage content dynamically, making it easy to update and maintain.\n\nThis project was a valuable learning experience, allowing me to refine my design and development skills while creating a professional platform to showcase my work.",
     imageSrc: "/images/project-picominportfolio.png",
     projectLink: "https://www.student.bth.se/~nilb24/dbwebb-kurser/design/me/portfolio/",
+    techStack: ["Pico CMS", "HTML", "CSS"],
   },
   {
     id: "project6",
@@ -52,5 +57,6 @@ export const projects = [
     details: "This project is a web application built using Symfony as part of the MVC course. The application demonstrates the use of object-oriented programming, MVC architecture, and database integration. Key features include:\n\n- **Controller and Views**: Implemented the MVC pattern with controllers handling logic and views rendering the web pages.\n- **Object-Oriented Programming**: Practiced creating classes and objects to structure the application.\n- **Symfony Framework**: Leveraged Symfony's tools and features to streamline development.\n\nThis project is still in progress, with the first two course modules completed. The current version includes a basic structure for a personal 'me' page and a report section. The project serves as a foundation for further exploration of Symfony and MVC concepts.",
     imageSrc: "/images/project-mvcsymfony.png",
     projectLink: "http://www.student.bth.se/~nilb24/dbwebb-kurser/mvc/me/report/public/",
+    techStack: ["Symfony", "PHP", "HTML", "CSS"],
   },
 ];

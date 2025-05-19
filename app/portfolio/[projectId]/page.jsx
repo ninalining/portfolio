@@ -21,7 +21,7 @@ export default async function ProjectPage({ params }) {
             <li key={p.id}>
               <Link
                 href={`/portfolio/${p.id}`}
-                className={`block px-4 py-2 rounded-md ${
+                className={`block px-4 py-2 rounded-md break-words ${
                   p.id === projectId
                     ? "bg-[var(--accent)] text-[var(--text)] underline dark:bg-[var(--accent)]"
                     : "bg-[var(--accent)] text-[var(--text)] dark:text-[var(--text)] transform transition-transform duration-200 hover:scale-105 dark:hover:bg-[var(--accent-hover)] hover:underline"
@@ -46,6 +46,11 @@ export default async function ProjectPage({ params }) {
           />
         </div>
         <h1 className="text-3xl font-bold mb-4">{project.title}</h1>
+        {project.techStack && (
+          <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+            <strong>Tech Stack:</strong> {project.techStack.join(", ")}
+          </p>
+        )}
         <div className="text-gray-600 dark:text-gray-300 mb-4 space-y-4">
           {project.shortDescription.split("\n").map((paragraph, index) => (
             <p key={index}>{paragraph}</p>
