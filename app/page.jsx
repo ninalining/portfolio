@@ -12,7 +12,7 @@ export default function Home() {
       <section className="text-center mb-16">
         <div className="w-[200px] h-[200px] mx-auto mb-6 rounded-full overflow-hidden shadow-lg">
           <Image
-            src="/images/IMG_6692.JPG"
+            src="/images/IMG_6082.JPG"
             alt="Profile Picture"
             width={200}
             height={200}
